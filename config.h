@@ -65,11 +65,16 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+    {netspeed_rx, "[ %sB/s]", "wlo1"},
+    { keymap, "[ %s]", NULL},
+    
+    //{ separator, "||~||", NULL},
     {uptime, "[ %s]", },
-    {run_command, "[ %2s%%]", "pactl list sinks | grep '^[[:space:]]Volume:' | \\head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \\([0-9][0-9]*\\)%.*,\\1,'" },
-    {cpu_perc, "[CPU %s%%]", NULL},
-    {ram_perc, "[RAM %s%%]", NULL},
-    {keymap, "[ %s]", NULL},
-    { battery_perc, "[ %s%] ", "BAT1" },
-	{ datetime, "[%s]",           "%a %b %d %R" },
+    {cpu_perc, "[ %s%%]", NULL},
+    {ram_perc, "[ %s%%]", NULL},
+    {run_command, "[ %4s]", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 $4}' | head -n1" },
+    //{run_command, "[%s]", "amixer sget Master | awk '/(?<=\[).*?(?=\])/ { print $1 $2 $3 }' " },
+    //{ separator, "||~||", NULL},
+    { battery_perc, "[ %s%]", "BAT1" },
+	{ datetime, "[ %s]",           "%a %b-%d %R" },
 };
