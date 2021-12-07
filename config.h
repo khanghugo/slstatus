@@ -66,10 +66,14 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
     {netspeed_rx, "[ %sB/s]", "wlo1"},
+    
+    //weather part
+    {run_command, "[%s]", " cat ~/.dwm/weather"},
+
     { keymap, "[ %s]", NULL},
     
     //{ separator, "||~||", NULL},
-    {uptime, "[ %s]", },
+    {uptime, "[ %s]", NULL},
     {cpu_perc, "[ %s%%]", NULL},
     {ram_perc, "[ %s%%]", NULL},
     {run_command, "[ %4s]", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 $4}' | head -n1" },
