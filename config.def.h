@@ -68,7 +68,7 @@ static const struct arg args[] = {
     {netspeed_rx, "[ %sB/s]", "wlo1"},
     
     //weather part
-    {run_command, "[%s]", " cat ~/.dwm/weather"},
+    {run_command, "[ %s]", "cat ~/.dwm/weather"},
 
     { keymap, "[ %s]", NULL},
     
