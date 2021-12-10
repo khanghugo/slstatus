@@ -75,10 +75,12 @@ static const struct arg args[] = {
     //{ separator, "||~||", NULL},
     {uptime, "[ %s]", NULL},
     {cpu_perc, "[ %s%%]", NULL},
-    {ram_perc, "[ %s%%]", NULL},
+    {ram_used, "[ %s%%]", NULL},
     {run_command, "[ %4s]", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 $4}' | head -n1" },
     //{run_command, "[%s]", "amixer sget Master | awk '/(?<=\[).*?(?=\])/ { print $1 $2 $3 }' " },
     //{ separator, "||~||", NULL},
+    { wifi_perc, "[ %s%%", "wlo1"},
+    { wifi_essid, " %s]", "wlo1"},
     { battery_perc, "[ %s%]", "BAT1" },
 	{ datetime, "[ %s]",           "%a %b-%d %R" },
 };
