@@ -68,12 +68,12 @@ static const struct arg args[] = {
     {netspeed_rx, "[ %sB/s]", "wlo1"},
     
     //weather part
-    {run_command, "[ %s]", "cat ~/.dwm/weather &"},
+    //{run_command, "[ %s]", "cat ~/.dwm/weather &"},
 
     { keymap, "[ %s]", NULL},
     
     //{ separator, "||~||", NULL},
-    {uptime, "[ %s]", NULL},
+    {uptime, "[ %s]", NULL},
     {cpu_perc, "[ %s%%]", NULL},
     {ram_used, "[ %sB]", NULL},
     {run_command, "[ %4s]", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 $4}' | head -n1" },
